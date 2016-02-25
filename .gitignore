@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+/static
+.idea/
+last.commit
+gunicorn.pid
+syntax_output
+fabfile
