@@ -28,6 +28,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chores',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -41,7 +43,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'chorelord-server.config.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -73,9 +75,12 @@ DATABASES = {
     }
 }
 
-WSGI_APPLICATION = 'chorelord-server.config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
